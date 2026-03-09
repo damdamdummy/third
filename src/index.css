@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-black text-white overflow-x-hidden;
+        font-family: 'Playfair Display', serif;
+    }
+}
+
+@layer components {
+    .film-grain {
+        @apply fixed inset-0 pointer-events-none z-[9999];
+        background: url('https://www.transparenttextures.com/patterns/stardust.png');
+        opacity: 0.15;
+        animation: grain 0.5s steps(10) infinite;
+    }
+
+    .typewriter {
+        font-family: 'Special Elite', cursive;
+    }
+
+    .handwritten {
+        font-family: 'Homemade Apple', cursive;
+    }
+
+    .noir-shadow {
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+    }
+
+    .vignette {
+        @apply fixed inset-0 pointer-events-none z-[9998];
+        background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+    }
+}
+
+@keyframes grain {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-5%, -10%);
+    }
+
+    20% {
+        transform: translate(-15%, 5%);
+    }
+
+    30% {
+        transform: translate(7%, -25%);
+    }
+
+    40% {
+        transform: translate(-5%, 25%);
+    }
+
+    50% {
+        transform: translate(-15%, 10%);
+    }
+
+    60% {
+        transform: translate(15%, 0%);
+    }
+
+    70% {
+        transform: translate(0%, 15%);
+    }
+
+    80% {
+        transform: translate(3%, 35%);
+    }
+
+    90% {
+        transform: translate(-10%, 10%);
+    }
+}
+
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
