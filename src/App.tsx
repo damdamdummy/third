@@ -78,7 +78,7 @@ const Countdown = ({ startDate }: { startDate: Date }) => {
     }, [startDate]);
 
     return (
-        <div className="flex flex-col items-center justify-center space-y-4 py-3">
+        <div className="flex flex-col items-center justify-center space-y-1 py-1">
             <div className="text-sm uppercase tracking-[0.3em] opacity-50 mb-4">Every second since we "began"</div>
             <div className="flex space-x-8 text-4xl md:text-6xl font-light">
                 <div className="flex flex-col items-center">
@@ -111,7 +111,7 @@ const GalleryItem = ({ src, note, index }: { src: string; note: string; index: n
             ([entry]) => {
                 if (entry.isIntersecting) setIsVisible(true);
             },
-            { threshold: 0.2 }
+            { threshold: 0.1 }
         );
         if (ref.current) observer.observe(ref.current);
         return () => observer.disconnect();
@@ -120,26 +120,26 @@ const GalleryItem = ({ src, note, index }: { src: string; note: string; index: n
     return (
         <div
             ref={ref}
-            className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 py-2 md:py-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                } ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+            className={`flex flex-col items-center gap-3 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
         >
-            {/* Bagian Foto */}
-            <div className="w-full md:w-1/2">
+            <div className="w-full aspect-[3/4] overflow-hidden rounded-sm">
                 <img
                     src={src}
                     alt="Memory"
-                    className="w-full grayscale contrast-125 brightness-75 hover:brightness-100 transition-all duration-700 noir-shadow rounded-sm"
+                    className="w-full h-full object-cover grayscale contrast-125 brightness-75 hover:brightness-100 transition-all duration-700 noir-shadow"
                 />
             </div>
 
-            <div className="w-full md:w-1/2 flex items-center justify-center text-center px-4">
-                <div className="handwritten text-xl md:text-2xl opacity-80 leading-snug py-4">
-                    {note || "..."}
+            {/* <div className="w-full flex flex-col items-center justify-center text-center">
+                <div className="handwritten text-sm md:text-xl opacity-80 leading-snug">
+                    {note}
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
+
 const MusicPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
@@ -181,15 +181,15 @@ export default function App() {
     const memories = [
         {
             src: "assets/sophia.png",
-            note: "My baby"
+            // note: "Hi Sophia blablabla"
         },
         {
             src: "assets/adam.png",
-            note: (
-                <div className="flex flex-col items-center gap-4">
-                    <Heart size={48} strokeWidth={1} className="opacity-40" />
-                </div>
-            )
+            // note: (
+            //     <div className="flex flex-col items-center gap-4">
+            //         <Heart size={48} strokeWidth={1} className="opacity-40" />
+            //     </div>
+            // )
         }
     ];
 
@@ -242,28 +242,29 @@ export default function App() {
                 </motion.div>
             </section>
 
-            <section className="max-w-5xl mx-auto px-4 py-32">
+            <section className="max-w-5xl mx-auto px-4 py-5">
                 <Countdown startDate={startDate} />
             </section>
 
             <section className="max-w-5xl mx-auto px-4 py-5">
-                {memories.map((memory, i) => (
-                    <GalleryItem key={i} {...memory} index={i} />
-                ))}
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-16">
+                    {memories.map((memory, i) => (
+                        <GalleryItem key={i} {...memory} index={i} />
+                    ))}
+                </div>
             </section>
 
 
-            <section className="max-w-3xl mx-auto px-4 py-64 text-center">
+            <section className="max-w-3xl mx-auto px-4 py-32 text-center">
                 <div className="handwritten text-4xl md:text-5xl mb-12 opacity-90">
                     Happy 3rd Monthsary, <br /> my love.
                 </div>
                 <div className="text-sm uppercase tracking-[0.4em] opacity-30">
                     Yours always, Adam
                 </div>
-
-                {/* <div className="mt-32 flex justify-center opacity-10">
+                <div className="mt-32 flex justify-center opacity-10">
                     <Heart size={48} strokeWidth={1} />
-                </div> */}
+                </div>
             </section>
 
             <footer className="py-12 text-center border-t border-white/5 opacity-20">
