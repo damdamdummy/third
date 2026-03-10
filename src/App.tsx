@@ -78,7 +78,7 @@ const Countdown = ({ startDate }: { startDate: Date }) => {
     }, [startDate]);
 
     return (
-        <div className="flex flex-col items-center justify-center space-y-4 py-12">
+        <div className="flex flex-col items-center justify-center space-y-4 py-3">
             <div className="text-sm uppercase tracking-[0.3em] opacity-50 mb-4">Every second since we "began"</div>
             <div className="flex space-x-8 text-4xl md:text-6xl font-light">
                 <div className="flex flex-col items-center">
@@ -120,26 +120,26 @@ const GalleryItem = ({ src, note, index }: { src: string; note: string; index: n
     return (
         <div
             ref={ref}
-            className={`flex flex-col md:flex-row items-center gap-8 py-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+            className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 py-2 md:py-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 } ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
         >
-            <div className="w-full md:w-1/2 relative group">
-                <div className="absolute -inset-4  transition-colors duration-500" />
+            {/* Bagian Foto */}
+            <div className="w-full md:w-1/2">
                 <img
                     src={src}
                     alt="Memory"
-                    className="w-full grayscale contrast-125 brightness-75 hover:brightness-100 transition-all duration-700 noir-shadow"
+                    className="w-full grayscale contrast-125 brightness-75 hover:brightness-100 transition-all duration-700 noir-shadow rounded-sm"
                 />
             </div>
-            <div className="w-full md:w-1/2 px-4">
-                <div className="handwritten text-1xl md:text-2xl opacity-80 leading-relaxed">
-                    {note}
+
+            <div className="w-full md:w-1/2 flex items-center justify-center text-center px-4">
+                <div className="handwritten text-xl md:text-2xl opacity-80 leading-snug py-4">
+                    {note || "..."}
                 </div>
             </div>
         </div>
     );
 };
-
 const MusicPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
@@ -180,12 +180,16 @@ export default function App() {
 
     const memories = [
         {
-            src: "assets/sophia.jpeg",
-            note: ""
+            src: "assets/sophia.png",
+            note: "My baby"
         },
         {
-            src: "assets/adam.jpeg",
-            note: ""
+            src: "assets/adam.png",
+            note: (
+                <div className="flex flex-col items-center gap-4">
+                    <Heart size={48} strokeWidth={1} className="opacity-40" />
+                </div>
+            )
         }
     ];
 
@@ -238,10 +242,9 @@ export default function App() {
                 </motion.div>
             </section>
 
-            <section className="max-w-5xl mx-auto px-4 py-32 border-y border-white/5">
+            <section className="max-w-5xl mx-auto px-4 py-32">
                 <Countdown startDate={startDate} />
             </section>
-
 
             <section className="max-w-5xl mx-auto px-4 py-5">
                 {memories.map((memory, i) => (
@@ -258,9 +261,9 @@ export default function App() {
                     Yours always, Adam
                 </div>
 
-                <div className="mt-32 flex justify-center opacity-10">
+                {/* <div className="mt-32 flex justify-center opacity-10">
                     <Heart size={48} strokeWidth={1} />
-                </div>
+                </div> */}
             </section>
 
             <footer className="py-12 text-center border-t border-white/5 opacity-20">
