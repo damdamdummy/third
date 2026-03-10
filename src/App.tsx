@@ -226,7 +226,7 @@ export default function App() {
 
                     <div className="h-24 flex items-center justify-center">
                         <Typewriter
-                            text="&quot;My kind of woman.&quot;"
+                            text="&quot;You're my kind of woman.&quot;"
                             delay={1500}
                         />
                     </div>
@@ -257,7 +257,12 @@ export default function App() {
 
             <section className="max-w-3xl mx-auto px-4 py-32 text-center">
                 <div className="handwritten text-4xl md:text-5xl mb-12 opacity-90">
-                    Happy 3rd Monthsary, <br /> my love.
+                    Happy 3rd Monthsary, <br /> sayang.
+                </div>
+                <div className="typewriter text-sm md:text-base mb-20 opacity-70">
+                    I've said this before and I will say it again. <br />
+                    Thank you for sticking with me, for choosing this messy (and sometimes awkward) guy and still seeing the best in me.
+                    I know I'm not the most expressive person, but I mean everything I feel for you. I hope you still feel my love for you, even in my silence.
                 </div>
                 <div className="text-sm uppercase tracking-[0.4em] opacity-30">
                     Yours always, Adam
