@@ -202,9 +202,9 @@ export default function App() {
                     <img
                         src="/assets/b.JPG"
                         alt="Background"
-                        className="w-full h-full object-cover grayscale opacity-30 scale-110"
+                        className="w-full h-full object-cover grayscale opacity-40 scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black" />
                 </div>
 
                 <div className="z-10 max-w-3xl">
@@ -215,7 +215,7 @@ export default function App() {
                         className="mb-12"
                     >
 
-                        <p className="t-mono text-[9px] uppercase tracking-[0.6em] opacity-25 mb-6">
+                        <p className="t-mono text-[9px] uppercase tracking-[0.6em] opacity-40 mb-6">
                             dedicated to
                         </p>
                         <div className="w-24 h-px mx-auto mb-8" style={{ background: 'linear-gradient(90deg, transparent, rgba(160,128,96,0.5), transparent)' }} />

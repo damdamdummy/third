@@ -26,12 +26,12 @@
     }
 
     .noir-shadow {
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
     }
 
     .vignette {
         @apply fixed inset-0 pointer-events-none z-[9998];
-        background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+        background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.5) 100%);
     }
 }
 
