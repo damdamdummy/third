@@ -123,14 +123,13 @@ const GalleryItem = ({ src, note, index }: { src: string; note: string; index: n
             className={`flex flex-col items-center gap-3 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
         >
-            <div className="w-full aspect-[3/4] overflow-hidden rounded-sm">
+            <div className="relative w-full flex justify-center p-2">
                 <img
                     src={src}
                     alt="Memory"
-                    className="w-full h-full object-cover grayscale contrast-125 brightness-75 hover:brightness-100 transition-all duration-700 noir-shadow"
+                    className="w-full h-auto object-contain grayscale contrast-125 brightness-90 hover:brightness-100 transition-all duration-700 png-edge"
                 />
             </div>
-
             {/* <div className="w-full flex flex-col items-center justify-center text-center">
                 <div className="handwritten text-sm md:text-xl opacity-80 leading-snug">
                     {note}
@@ -185,11 +184,7 @@ export default function App() {
         },
         {
             src: "assets/adam.png",
-            // note: (
-            //     <div className="flex flex-col items-center gap-4">
-            //         <Heart size={48} strokeWidth={1} className="opacity-40" />
-            //     </div>
-            // )
+            // note: 
         }
     ];
 
@@ -211,12 +206,11 @@ export default function App() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.5 }}
+                        transition={{ duration: 0.8 }}
                         className="mb-12"
                     >
-
                         <p className="t-mono text-[9px] uppercase tracking-[0.6em] opacity-40 mb-6">
-                            dedicated to
+                            dearest
                         </p>
                         <div className="w-24 h-px mx-auto mb-8" style={{ background: 'linear-gradient(90deg, transparent, rgba(160,128,96,0.5), transparent)' }} />
                         <h1 className="text-6xl mt-2 md:text-8xl font-light tracking-tighter mb-4 font-thin italic">
@@ -227,7 +221,7 @@ export default function App() {
                     <div className="h-24 flex items-center justify-center">
                         <Typewriter
                             text="&quot;You're my kind of woman.&quot;"
-                            delay={1500}
+                            delay={400}
                         />
                     </div>
                 </div>
@@ -235,8 +229,8 @@ export default function App() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.3 }}
-                    transition={{ delay: 4, duration: 2 }}
-                    className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center"
+                    transition={{ delay: 0, duration: 5 }}
+                    className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center"
                 >
                     <ScrollIndicator />
                 </motion.div>
@@ -264,17 +258,24 @@ export default function App() {
                     Thank you for sticking with me, for choosing this messy (and sometimes awkward) guy and still seeing the best in me.
                     I know I'm not the most expressive person, but I mean everything I feel for you. I hope you still feel my love for you, even in my silence.
                 </div>
-                <div className="text-sm uppercase tracking-[0.4em] opacity-30">
+                <div className="typewriter text-sm md:text-base mb-5 opacity-90">
+                    Yours always,<br />Adam
+                </div>
+                {/* <div className="text-sm uppercase tracking-[0.4em] opacity-30">
                     Yours always, Adam
-                </div>
-                <div className="mt-32 flex justify-center opacity-10">
-                    <Heart size={48} strokeWidth={1} />
-                </div>
+                </div> */}
+
+
+
             </section>
 
             <footer className="py-12 text-center border-t border-white/5 opacity-20">
+
                 <div className="text-[10px] uppercase tracking-[0.5em]">
                     March 12, 2026
+                </div>
+                <div className="mt-2 flex justify-center opacity-10">
+                    <Heart size={48} strokeWidth={1} />
                 </div>
             </footer>
         </div>

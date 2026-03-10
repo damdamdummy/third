@@ -33,6 +33,19 @@
         @apply fixed inset-0 pointer-events-none z-[9998];
         background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.5) 100%);
     }
+
+    .photo-edge {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.03), 0 10px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .photo-overlay {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    }
+
+    .png-edge {
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+    }
 }
 
 @keyframes grain {
