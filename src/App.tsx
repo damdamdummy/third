@@ -5,7 +5,7 @@ import { Music, Volume2, VolumeX, Heart, Clock, Camera, PenTool } from 'lucide-r
 const FilmGrain = () => (
     <>
         <div className="film-grain" />
-        <div className="vignette" />
+        {/* <div className="vignette" /> */}
     </>
 );
 
