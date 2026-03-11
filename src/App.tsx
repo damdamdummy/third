@@ -183,7 +183,7 @@ export default function App() {
             // note: "Hi Sophia blablabla"
         },
         {
-            src: "assets/adam.png",
+            src: "assets/mada.png",
             // note: 
         }
     ];
@@ -241,7 +241,7 @@ export default function App() {
             </section>
 
             <section className="max-w-5xl mx-auto px-4 py-5">
-                <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-16">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-6">
                     {memories.map((memory, i) => (
                         <GalleryItem key={i} {...memory} index={i} />
                     ))}
@@ -256,7 +256,7 @@ export default function App() {
                 <div className="typewriter text-sm md:text-base mb-20 opacity-70">
                     I've said this before and I will say it again. <br />
                     Thank you for sticking with me, for choosing this messy (and sometimes awkward) guy and still seeing the best in me.
-                    I know I'm not the most expressive person, but I mean everything I feel for you. I hope you still feel my love for you, even in my silence.
+                    I know I'm not the most expressive person, but I mean everything I feel for you. I hope you can still feel my love for you, even in my silence.
                 </div>
                 <div className="typewriter text-sm md:text-base mb-5 opacity-90">
                     Yours always,<br />Adam
@@ -274,7 +274,7 @@ export default function App() {
                 <div className="text-[10px] uppercase tracking-[0.5em]">
                     March 12, 2026
                 </div>
-                <div className="mt-2 flex justify-center opacity-10">
+                <div className="mt-2 flex justify-center opacity-40">
                     <Heart size={48} strokeWidth={1} />
                 </div>
             </footer>
