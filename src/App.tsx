@@ -236,7 +236,7 @@ export default function App() {
                 </div>
                 <div className="typewriter text-sm md:text-base mb-20 opacity-70">
                     Terima kasih sudah menjadi teman baik sekaligus rumah kesayanganku. Maaf jika bulan ini terasa berat atau ada hal yang sempat melukai hatimu. Aku sangat bersyukur kita tetap bertahan dan masih di sini sampai sekarang. <br /><br />
-Semoga kita bisa terus jalan berdampingan, ke mana pun arahnya dan seperti apa pun jalan yang harus dilewati. Dan semoga semesta selalu merestui langkah kita. <br /><br />
+Semoga kita bisa terus jalan berdampingan, ke mana pun arahnya dan seperti apa pun rintangannya. Dan semoga semesta selalu merestui langkah kita. <br /><br />
 I love you, always, even in my silence.
                 </div>
                 <div className="typewriter text-sm md:text-base opacity-90">
