@@ -235,8 +235,9 @@ export default function App() {
                     Happy 3rd Monthsary, <br /> sayang.
                 </div>
                 <div className="typewriter text-sm md:text-base mb-20 opacity-70">
-                    Terima kasih sudah menjadi teman baik sekaligus rumah kesayanganku, dan maaf jika bulan ini terasa berat atau ada banyak hal yang sempat melukai hati kamu. Aku harap kita tetap bertahan dan semoga alam semesta selalu merestui kita. </ br>
-I know I can be quiet sometimes and I'm not always good at showing how I feel. But I hope you know that my love is still there, always, even in those moments when I can't find the right way to say it.
+                    Terima kasih sudah menjadi teman baik sekaligus rumah kesayanganku. Maaf jika bulan ini terasa berat atau ada hal yang sempat melukai hatimu. Aku sangat bersyukur kita tetap bertahan dan masih di sini sampai sekarang. <br />
+Semoga kita bisa terus jalan berdampingan, ke mana pun arahnya dan seperti apa pun jalan yang harus dilewati. Dan semoga semesta selalu merestui langkah kita. <br />
+I love you, always, even in my silence.
                 </div>
                 <div className="typewriter text-sm md:text-base opacity-90">
                     Yours always,<br />Adam
