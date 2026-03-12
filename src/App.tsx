@@ -236,8 +236,7 @@ export default function App() {
                 </div>
                 <div className="typewriter text-sm md:text-base mb-20 opacity-70">
                     I've said this before and I will say it again. <br />
-                    Thank you for sticking with me, for choosing this messy (and sometimes awkward) guy and still seeing the best in me.
-                    I know I'm not the most expressive person, but I mean everything I feel for you. I hope you can still feel my love for you, even in my silence.
+                    Thank you for staying with me and for bringing so much warmth into my life. Thank you for your understanding and patience, especially during those times when I go quiet or struggle to speak my mind. I hope you know that my love is always there, even in the moments when I can't find the right way to say it.
                 </div>
                 <div className="typewriter text-sm md:text-base opacity-90">
                     Yours always,<br />Adam
