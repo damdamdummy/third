@@ -26,13 +26,14 @@ const Typewriter = ({ text, delay = 0 }: { text: string; delay?: number }) => {
     }, [text, delay]);
 
     return (
-        <span className="typewriter">
+        <span>
+            {/* <span ="typewriter"> */}
             {displayedText}
-            <motion.span
+            {/* <motion.span
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
                 className="inline-block w-2 h-5 bg-white ml-1 align-middle"
-            />
+            /> */}
         </span>
     );
 };
@@ -41,7 +42,7 @@ const ScrollIndicator = () => (
     <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 5, duration: 2 }}
+        transition={{ delay: 1, duration: 2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer"
         onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
     >
@@ -80,7 +81,7 @@ const Countdown = ({ startDate }: { startDate: Date }) => {
     return (
         <div className="flex flex-col items-center justify-center space-y-1 py-1">
             <div className="text-sm uppercase tracking-[0.3em] opacity-50 mb-4">Every second since we "began"</div>
-            <div className="flex space-x-8 text-4xl md:text-6xl font-light">
+            <div className="flex space-x-8 text-xl md:text-2xl font-light">
                 <div className="flex flex-col items-center">
                     <span>{time.days}</span>
                     <span className="text-xs uppercase tracking-widest opacity-40 mt-2">Days</span>
@@ -179,11 +180,11 @@ export default function App() {
 
     const memories = [
         {
-            src: "assets/sophia.png",
+            src: "assets/s.jpg",
             // note: "Hi Sophia blablabla"
         },
         {
-            src: "assets/mada.png",
+            src: "assets/a.jpg",
             // note: 
         }
     ];
@@ -209,45 +210,25 @@ export default function App() {
                         transition={{ duration: 0.8 }}
                         className="mb-12"
                     >
-                        <p className="t-mono text-[9px] uppercase tracking-[0.6em] opacity-40 mb-6">
-                            dearest
+                        <p className="t-mono text-xs uppercase tracking-[0.5em] opacity-40 mb-6">
+                            <Typewriter
+                                text="dear sophia"
+                                delay={100}
+                                speed={80}
+                            />
                         </p>
-                        <div className="w-24 h-px mx-auto mb-8" style={{ background: 'linear-gradient(90deg, transparent, rgba(160,128,96,0.5), transparent)' }} />
-                        <h1 className="text-6xl mt-2 md:text-8xl font-light tracking-tighter mb-4 font-thin italic">
-                            Sophia
-                        </h1>
                     </motion.div>
-
-                    <div className="h-24 flex items-center justify-center">
-                        <Typewriter
-                            text="&quot;You're my kind of woman.&quot;"
-                            delay={400}
-                        />
-                    </div>
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.3 }}
-                    transition={{ delay: 0, duration: 5 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 0.6, y: 0 }}
+                    transition={{ delay: 0, duration: 0.6 }}
                     className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center"
                 >
                     <ScrollIndicator />
                 </motion.div>
             </section>
-
-            <section className="max-w-5xl mx-auto px-4 py-5">
-                <Countdown startDate={startDate} />
-            </section>
-
-            <section className="max-w-5xl mx-auto px-4 py-5">
-                <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-6">
-                    {memories.map((memory, i) => (
-                        <GalleryItem key={i} {...memory} index={i} />
-                    ))}
-                </div>
-            </section>
-
 
             <section className="max-w-3xl mx-auto px-4 py-32 text-center">
                 <div className="handwritten text-4xl md:text-5xl mb-12 opacity-90">
@@ -258,16 +239,25 @@ export default function App() {
                     Thank you for sticking with me, for choosing this messy (and sometimes awkward) guy and still seeing the best in me.
                     I know I'm not the most expressive person, but I mean everything I feel for you. I hope you can still feel my love for you, even in my silence.
                 </div>
-                <div className="typewriter text-sm md:text-base mb-5 opacity-90">
+                <div className="typewriter text-sm md:text-base opacity-90">
                     Yours always,<br />Adam
                 </div>
-                {/* <div className="text-sm uppercase tracking-[0.4em] opacity-30">
-                    Yours always, Adam
-                </div> */}
-
-
-
             </section>
+
+            <div className="w-40 h-px mx-auto mb-32" style={{ background: 'linear-gradient(90deg, transparent, rgba(160,128,96,0.5), transparent)' }} />
+
+            <section className="max-w-5xl mx-auto px-4 py-5">
+                <Countdown startDate={startDate} />
+            </section>
+
+            <section className="max-w-5xl mx-auto px-4 py-2">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-0 md:gap-6">
+                    {memories.map((memory, i) => (
+                        <GalleryItem key={i} {...memory} index={i} />
+                    ))}
+                </div>
+            </section>
+
 
             <footer className="py-12 text-center border-t border-white/5 opacity-20">
 
