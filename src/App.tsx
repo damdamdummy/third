@@ -169,7 +169,7 @@ const MusicPlayer = () => {
                 {isPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
             </button>
             <div className="text-[10px] uppercase tracking-widest opacity-50 pr-2">
-                {isPlaying ? 'Now Playing: My Kind of Woman' : ''}
+                {isPlaying ? 'Now Playing: My Kind of Woman' : 'Paused'}
             </div>
         </div>
     );
@@ -235,7 +235,7 @@ export default function App() {
                     Happy 3rd Monthsary, <br /> sayang.
                 </div>
                 <div className="typewriter text-sm md:text-base mb-20 opacity-70">
-                    Terima kasih sudah menjadi teman baik sekaligus rumah kesayanganku. Maaf jika bulan ini terasa berat atau ada hal yang sempat melukai hatimu. Aku sangat bersyukur kita tetap bertahan dan masih di sini sampai sekarang. <br /><br />
+                    Terima kasih sudah menjadi teman baik sekaligus rumah ternyamanku. Maaf jika bulan ini terasa berat atau ada hal yang sempat melukai hatimu. Aku sangat bersyukur kita tetap bertahan dan kamu masih di sini menemaniku. <br /><br />
 Semoga kita bisa terus jalan berdampingan, ke mana pun arahnya dan seperti apa pun rintangannya. Dan semoga semesta selalu merestui langkah kita. <br /><br />
 I love you, always, even in my silence.
                 </div>
